@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class TestGameManager : MonoBehaviour
 {
     public WorldSpinner world;
+    public PlayerInteractor interactor;
 
     void Update()
     {
@@ -19,6 +20,8 @@ public class TestGameManager : MonoBehaviour
         Gamepad pad = Gamepad.current;
         if (pad != null && input == 0f)
             input = pad.leftStick.x.ReadValue();
+
+        if (interactor != null && interactor.Busy) input = 0f;
 
         world.SetMoveInput(input);
     }
