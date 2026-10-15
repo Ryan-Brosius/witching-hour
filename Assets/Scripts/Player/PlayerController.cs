@@ -51,8 +51,8 @@ public class PlayerController : MonoBehaviour
         visual.localPosition = visualStartPos + Vector3.up * hop;
 
         // Face the input direction right away (keeps the last facing when idle).
-        if (world.MoveInput > 0f) facingYaw = Mathf.MoveTowardsAngle(facingYaw, data.faceAngle, data.turnSpeed * Time.deltaTime);
-        if (world.MoveInput < 0f) facingYaw = Mathf.MoveTowardsAngle(facingYaw, -data.faceAngle, data.turnSpeed * Time.deltaTime);
+        // if (world.MoveInput > 0f) facingYaw = Mathf.MoveTowardsAngle(facingYaw, data.faceAngle, data.turnSpeed * Time.deltaTime);
+        // if (world.MoveInput < 0f) facingYaw = Mathf.MoveTowardsAngle(facingYaw, -data.faceAngle, data.turnSpeed * Time.deltaTime);
 
         // Lean slightly into the walk.
         lean = Mathf.SmoothDamp(lean, -speed01 * data.leanAngle, ref leanVelocity, data.leanSmoothTime);
