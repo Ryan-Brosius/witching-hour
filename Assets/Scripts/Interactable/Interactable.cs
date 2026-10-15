@@ -36,6 +36,9 @@ public class Interactable : MonoBehaviour
     // Called when W / Up is let go, with how long it was held (doorbell tap vs hold).
     public virtual void InteractReleased(PlayerInteractor player, float heldTime) { }
 
+    // For UnityEvents, e.g. a puzzle's onSolved unlocking a gate.
+    public void Unlock() => canInteract = true;
+
     public void SetHighlighted(bool on, Material material, float width)
     {
         if (outline == null) outline = gameObject.AddComponent<InteractOutline>();
