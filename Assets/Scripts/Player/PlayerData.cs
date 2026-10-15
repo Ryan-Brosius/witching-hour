@@ -17,9 +17,9 @@ public class PlayerData : ScriptableObject
     public float hopsPerUnit = 1.2f;
 
     [Header("Facing")]
-    [Tooltip("Yaw when facing right. 90 = pure side view, higher turns the face toward the camera.")]
-    public float faceAngle = 115f;
-    [Tooltip("Degrees per second when turning around.")]
+    [Tooltip("Turn on if the sprite art is drawn facing left.")]
+    public bool artFacesLeft;
+    [Tooltip("Degrees per second for the paper flip. 900 = about 0.2s per turn around.")]
     public float turnSpeed = 900f;
 
     [Header("Lean")]

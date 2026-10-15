@@ -17,6 +17,7 @@ public class WorldSpinner : MonoBehaviour
     public float Speed { get; private set; }
     public float Speed01 => data.maxSpeed > 0f ? Speed / data.maxSpeed : 0f;
     public Vector3 PlayerSpot => transform.position + Vector3.back * data.walkRadius;
+    public float Angle { get; private set; }
 
     // Called by the input script.
     public void SetMoveInput(float input)
@@ -36,6 +37,7 @@ public class WorldSpinner : MonoBehaviour
         float degrees = Speed / data.walkRadius * Mathf.Rad2Deg * Time.deltaTime;
         if (data.invertDirection) degrees = -degrees;
         transform.Rotate(0f, degrees, 0f, Space.World);
+        Angle = Mathf.Repeat(Angle + degrees, 360f);
 
         // Push the moved colliders to physics now, so the player's ground check this frame is accurate.
         Physics.SyncTransforms();

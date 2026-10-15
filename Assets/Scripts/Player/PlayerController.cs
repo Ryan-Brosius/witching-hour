@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(spot.x, transform.position.y, spot.z);
 
         visualStartPos = visual.localPosition;
-        facingYaw = data.faceAngle;
+        facingYaw = data.artFacesLeft ? 180f : 0f;
     }
 
     void LateUpdate()
@@ -50,9 +50,12 @@ public class PlayerController : MonoBehaviour
         float hop = Mathf.Abs(Mathf.Sin(hopPhase * Mathf.PI)) * data.hopHeight * amount;
         visual.localPosition = visualStartPos + Vector3.up * hop;
 
-        // Face the input direction right away (keeps the last facing when idle).
-        if (world.MoveInput > 0f) facingYaw = Mathf.MoveTowardsAngle(facingYaw, data.faceAngle, data.turnSpeed * Time.deltaTime);
-        if (world.MoveInput < 0f) facingYaw = Mathf.MoveTowardsAngle(facingYaw, -data.faceAngle, data.turnSpeed * Time.deltaTime);
+        // Paper Mario flip: the flat sprite spins 180 on Y to turn around.
+        // Plain MoveTowards (not MoveTowardsAngle) between 0 and 180 so it flips back the way it came.
+        float rightYaw = data.artFacesLeft ? 180f : 0f;
+        float leftYaw = 180f - rightYaw;
+        if (world.MoveInput > 0f) facingYaw = Mathf.MoveTowards(facingYaw, rightYaw, data.turnSpeed * Time.deltaTime);
+        if (world.MoveInput < 0f) facingYaw = Mathf.MoveTowards(facingYaw, leftYaw, data.turnSpeed * Time.deltaTime);
 
         // Lean slightly into the walk.
         lean = Mathf.SmoothDamp(lean, -speed01 * data.leanAngle, ref leanVelocity, data.leanSmoothTime);
