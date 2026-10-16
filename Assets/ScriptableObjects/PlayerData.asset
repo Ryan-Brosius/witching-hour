@@ -17,9 +17,9 @@ MonoBehaviour:
     m_Bits: 64
   groundCheckHeight: 10
   groundSmoothTime: 0.06
-  hopHeight: 0.15
-  hopsPerUnit: 1.2
-  faceAngle: 115
+  hopHeight: 0
+  hopsPerUnit: 1
+  artFacesLeft: 0
   turnSpeed: 900
   leanAngle: 6
   leanSmoothTime: 0.12

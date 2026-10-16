@@ -39,6 +39,8 @@ public class Interactable : MonoBehaviour
     // For UnityEvents, e.g. a puzzle's onSolved unlocking a gate.
     public void Unlock() => canInteract = true;
 
+    public void Lock() => canInteract &= false;
+
     public void SetHighlighted(bool on, Material material, float width)
     {
         if (outline == null) outline = gameObject.AddComponent<InteractOutline>();

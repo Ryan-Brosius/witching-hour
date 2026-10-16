@@ -33,6 +33,7 @@ public class CombinationLock : MonoBehaviour
                 case 'x': result *= n; break;
                 case '/': result /= n; break;
                 case '^': result = Mathf.Pow(result, n); break;
+                case '@': result -= Mathf.Pow(2, n); break;
             }
         }
         return result;

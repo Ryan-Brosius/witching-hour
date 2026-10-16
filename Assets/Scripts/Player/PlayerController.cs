@@ -1,3 +1,4 @@
+using Unity.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -14,6 +15,15 @@ public class PlayerController : MonoBehaviour
     float lean;
     float leanVelocity;
 
+    [Header("Sprite Lists")]
+    public SpriteRenderer spriteRenderer;
+    public Sprite[] movingSprites;
+    public Sprite[] stationarySprites;
+    public float frameRate = 2f;
+    bool isMoving = false;
+    float timer;
+    private int currentFrame;
+
     void Start()
     {
         Vector3 spot = world.PlayerSpot;
@@ -21,12 +31,16 @@ public class PlayerController : MonoBehaviour
 
         visualStartPos = visual.localPosition;
         facingYaw = data.artFacesLeft ? 180f : 0f;
+
+        if (spriteRenderer == null)
+            spriteRenderer = visual.GetComponent<SpriteRenderer>();
     }
 
     void LateUpdate()
     {
         StickToGround();
         AnimateVisual();
+        AnimateSprite();
     }
 
     void StickToGround()
@@ -45,6 +59,8 @@ public class PlayerController : MonoBehaviour
         float speed01 = world.Speed01;          // -1..1
         float amount = Mathf.Abs(speed01);      // 0..1
 
+        isMoving = amount > 0 ? true : false;
+
         // Hop, scaled by speed so it settles back down when we stop.
         hopPhase = (hopPhase + Mathf.Abs(world.Speed) * data.hopsPerUnit * Time.deltaTime) % 1f;
         float hop = Mathf.Abs(Mathf.Sin(hopPhase * Mathf.PI)) * data.hopHeight * amount;
@@ -61,5 +77,20 @@ public class PlayerController : MonoBehaviour
         lean = Mathf.SmoothDamp(lean, -speed01 * data.leanAngle, ref leanVelocity, data.leanSmoothTime);
 
         visual.rotation = Quaternion.Euler(0f, 0f, lean) * Quaternion.Euler(0f, facingYaw, 0f);
+    }
+
+    void AnimateSprite()
+    {
+        Sprite[] activeSprites = isMoving ? movingSprites : stationarySprites;
+
+        if (activeSprites == null || activeSprites.Length == 0) return;
+
+        timer += Time.deltaTime;
+        if (timer >= 1f / frameRate)
+        {
+            timer = 0f;
+            currentFrame = (currentFrame + 1) % activeSprites.Length;
+            spriteRenderer.sprite = activeSprites[currentFrame];
+        }
     }
 }
