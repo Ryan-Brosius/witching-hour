@@ -1311,8 +1311,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollLayer
   world: {fileID: 130342101}
-  loopsPerSpin: 1
+  scrollFactor: 1
   loopLength: 70
+  popupDistance: 30
+  popupLength: 3
 --- !u!4 &442990352
 Transform:
   m_ObjectHideFlags: 0
@@ -7049,8 +7051,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollLayer
   world: {fileID: 130342101}
-  loopsPerSpin: 1
+  scrollFactor: 1
   loopLength: 36
+  popupDistance: 30
+  popupLength: 3
 --- !u!4 &666516599
 Transform:
   m_ObjectHideFlags: 0
@@ -7870,8 +7874,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollLayer
   world: {fileID: 130342101}
-  loopsPerSpin: 1
+  scrollFactor: 1
   loopLength: 50
+  popupDistance: 30
+  popupLength: 3
 --- !u!4 &867996169
 Transform:
   m_ObjectHideFlags: 0
@@ -11006,8 +11012,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollLayer
   world: {fileID: 130342101}
-  loopsPerSpin: 1
+  scrollFactor: 1
   loopLength: 50
+  popupDistance: 30
+  popupLength: 3
 --- !u!4 &1857997628
 Transform:
   m_ObjectHideFlags: 0
@@ -12362,8 +12370,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollLayer
   world: {fileID: 130342101}
-  loopsPerSpin: 1
+  scrollFactor: 1
   loopLength: 63
+  popupDistance: 14
+  popupLength: 2
 --- !u!4 &2133930147
 Transform:
   m_ObjectHideFlags: 0
