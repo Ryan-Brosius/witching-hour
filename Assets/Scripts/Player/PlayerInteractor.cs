@@ -33,7 +33,7 @@ public class PlayerInteractor : MonoBehaviour
         SetCurrent(FindClosest());
         if (Current == null || !InteractDown()) return;
 
-        if (!Current.canInteract)
+        if (!Current.canInteract && !string.IsNullOrEmpty(Current.lockedHint))
         {
             internalDialogue.Say(Current.lockedHint);
             return;
