@@ -2339,6 +2339,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &514250993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4387734360708195966, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+  m_PrefabInstance: {fileID: 961372360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &516138906
 GameObject:
   m_ObjectHideFlags: 0
@@ -9469,12 +9474,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: m_Name
-      value: Combination Lock #3
+      value: Lock Clue House #3
       objectReference: {fileID: 0}
     - target: {fileID: 4374480906296614730, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: screen
       value: 
       objectReference: {fileID: 747196825}
+    - target: {fileID: 4387734360708195966, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4599477209084791797, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -9495,10 +9504,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4374480906296614730, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2138067975}
+    - targetCorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2138067974}
   m_SourcePrefab: {fileID: 100100000, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
 --- !u!1001 &967959744
 PrefabInstance:
@@ -9885,6 +9901,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+--- !u!4 &1080988453 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4387734360708195966, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+  m_PrefabInstance: {fileID: 1757874848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1096613252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+  m_PrefabInstance: {fileID: 6168648988739969145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1115542997
 GameObject:
   m_ObjectHideFlags: 0
@@ -10540,6 +10566,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d9cec089273014288419dfe87e50ba, type: 3}
+--- !u!1 &1211007880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+  m_PrefabInstance: {fileID: 961372360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1217592426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11813,6 +11844,53 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1180692099836164672, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
   m_PrefabInstance: {fileID: 1505346316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1554614386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+  m_PrefabInstance: {fileID: 1757874848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1554614388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554614386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a5dd94f72ba44488d42325e224bd0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TalkInteractable
+  range: 1.5
+  canInteract: 1
+  lockedHint: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  speaker: {fileID: 1554614389}
+  lines:
+  - Why does everyone here speak so weirdly?
+  - Just says random facts to a complete stranger
+  - Anyways, I love doing prime factorization
+--- !u!114 &1554614389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554614386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f458f568b574744f859ebc9dec7ffe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSpeaker
+  textPrefab: {fileID: 7249283498945201519, guid: d2ceec9206f44e84e9bab3fe9ebe2ab0, type: 3}
+  textAnchor: {fileID: 1080988453}
+  audioSource: {fileID: 0}
+  voiceClips: []
+  lettersPerSound: 2
+  minPitch: 0.9
+  maxPitch: 1.15
 --- !u!1 &1563528071
 GameObject:
   m_ObjectHideFlags: 0
@@ -12614,20 +12692,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: m_Name
-      value: Combination Lock #2
+      value: Lock Clue House #2
       objectReference: {fileID: 0}
     - target: {fileID: 4374480906296614730, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: screen
       value: 
       objectReference: {fileID: 1570811456}
+    - target: {fileID: 4387734360708195966, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8808860014925565021, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: m_Name
       value: Building2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4374480906296614730, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1554614389}
+    - targetCorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1554614388}
   m_SourcePrefab: {fileID: 100100000, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
 --- !u!1 &1794948592
 GameObject:
@@ -12828,6 +12917,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!4 &1832496395 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4387734360708195966, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+  m_PrefabInstance: {fileID: 6168648988739969145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1854701227
 GameObject:
   m_ObjectHideFlags: 0
@@ -14843,6 +14937,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3305547896818745190, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
   m_PrefabInstance: {fileID: 6168648988739969145}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2103964758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096613252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a5dd94f72ba44488d42325e224bd0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TalkInteractable
+  range: 1.5
+  canInteract: 1
+  lockedHint: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  speaker: {fileID: 2103964759}
+  lines:
+  - I have two simple pleasures in life
+  - Keeping all my valuables outside my house
+  - And the number 250
+--- !u!114 &2103964759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096613252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f458f568b574744f859ebc9dec7ffe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSpeaker
+  textPrefab: {fileID: 7249283498945201519, guid: d2ceec9206f44e84e9bab3fe9ebe2ab0, type: 3}
+  textAnchor: {fileID: 1832496395}
+  audioSource: {fileID: 0}
+  voiceClips: []
+  lettersPerSound: 2
+  minPitch: 0.9
+  maxPitch: 1.15
 --- !u!1001 &2124656260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15088,6 +15224,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3305547896818745190, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
   m_PrefabInstance: {fileID: 961372360}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2138067974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211007880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a5dd94f72ba44488d42325e224bd0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TalkInteractable
+  range: 1.5
+  canInteract: 1
+  lockedHint: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  speaker: {fileID: 2138067975}
+  lines:
+  - I hate that guy obsessed with prime factorization
+  - I believe in the power of subtraction instead
+  - It is second to none
+--- !u!114 &2138067975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211007880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f458f568b574744f859ebc9dec7ffe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSpeaker
+  textPrefab: {fileID: 7249283498945201519, guid: d2ceec9206f44e84e9bab3fe9ebe2ab0, type: 3}
+  textAnchor: {fileID: 514250993}
+  audioSource: {fileID: 0}
+  voiceClips: []
+  lettersPerSound: 2
+  minPitch: 0.9
+  maxPitch: 1.15
 --- !u!114 &2144806201 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2396174751654998095, guid: 7151832ed5bab2a499864fa9565e3104, type: 3}
@@ -15262,7 +15440,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9011918891143432656, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -15801,20 +15980,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: m_Name
-      value: Combination Lock #1
+      value: Lock Clue House #1
       objectReference: {fileID: 0}
     - target: {fileID: 4374480906296614730, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: screen
       value: 
       objectReference: {fileID: 2053084638}
+    - target: {fileID: 4387734360708195966, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8808860014925565021, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
       propertyPath: m_Name
       value: Building2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4374480906296614730, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2103964759}
+    - targetCorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2103964758}
   m_SourcePrefab: {fileID: 100100000, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
 --- !u!1001 &6749413779229892137
 PrefabInstance:
