@@ -470,10 +470,10 @@ RectTransform:
   - {fileID: 7359294202419175444}
   m_Father: {fileID: 7352244033746079015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120.95001, y: -45.80001}
-  m_SizeDelta: {x: 73.966675, y: 91.60002}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7500941430136670383
 MonoBehaviour:
@@ -843,10 +843,10 @@ RectTransform:
   - {fileID: 6817880346661147024}
   m_Father: {fileID: 7352244033746079015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 288.88336, y: -45.80001}
-  m_SizeDelta: {x: 73.966675, y: 91.60002}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1031120902733442545
 MonoBehaviour:
@@ -877,6 +877,7 @@ GameObject:
   - component: {fileID: 6317477818548622559}
   - component: {fileID: 6821881899215760710}
   - component: {fileID: 3491123078532409804}
+  - component: {fileID: 4621601418926446463}
   m_Layer: 5
   m_Name: Combination Puzzle #1
   m_TagString: Untagged
@@ -940,6 +941,7 @@ MonoBehaviour:
   - {fileID: 7500941430136670383}
   - {fileID: 7180382819874867934}
   - {fileID: 1031120902733442545}
+  useEvaluation: 1
   operators: xxx
   target: 250
   onSolved:
@@ -981,6 +983,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4621601418926446463}
+        m_TargetAssemblyTypeName: ImageSwapper, Assembly-CSharp
+        m_MethodName: SwapSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 6317477818548622559}
         m_TargetAssemblyTypeName: PuzzleScreen, Assembly-CSharp
         m_MethodName: CloseAfterSolve
@@ -1005,6 +1019,23 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4621601418926446463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6915677827967559334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e37a4a380861c0b4188aecc4e61656a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImageSwapper
+  openSprite: {fileID: -2636686899170253980, guid: 1fdbc5c20f054c44eb26db89009c71c6, type: 3}
+  closedSprite: {fileID: -5620155193319629329, guid: b4df246333b75cd4889546bbf33f4057, type: 3}
+  imageRenderer: {fileID: 5627665005181594610}
+  gateInteractable: {fileID: 0}
+  alwaysOpen: 1
 --- !u!1 &7421194871770277876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,10 +1418,10 @@ RectTransform:
   - {fileID: 351105262273048566}
   m_Father: {fileID: 7352244033746079015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.91669, y: -45.80001}
-  m_SizeDelta: {x: 73.966675, y: 91.60002}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7180382819874867934
 MonoBehaviour:
@@ -1442,10 +1473,10 @@ RectTransform:
   - {fileID: 8924598805252805726}
   m_Father: {fileID: 7352244033746079015}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 36.983337, y: -45.80001}
-  m_SizeDelta: {x: 73.966675, y: 91.60002}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8950808874784110394
 MonoBehaviour:

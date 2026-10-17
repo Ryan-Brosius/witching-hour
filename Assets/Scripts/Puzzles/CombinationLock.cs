@@ -7,6 +7,7 @@ public class CombinationLock : MonoBehaviour
     [Tooltip("Left to right.")]
     public NumberWheel[] wheels;
     public bool useEvaluation = true;
+    public bool usePowers = false;
     [Tooltip("Symbols between the wheels, left to right. Use + - x / ^")]
     public string operators = "xxx";
     public float target = 250f;
@@ -29,8 +30,8 @@ public class CombinationLock : MonoBehaviour
             string combinedString = string.Concat(wheels.Select(w => w.value.ToString()));
             return float.Parse(combinedString);
         }
-
         float result = wheels[0].value;
+        if (usePowers) result = Mathf.Pow(2, wheels[0].value);
         for (int i = 1; i < wheels.Length; i++)
         {
             float n = wheels[i].value;
