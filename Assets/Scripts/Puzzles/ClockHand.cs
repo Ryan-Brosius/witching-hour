@@ -1,8 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ClockHand : MonoBehaviour, IDragHandler
+public class ClockHand : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     public float angle;
     [Tooltip("Snap to steps of this many degrees. 6 = one minute, 0 = free.")]
