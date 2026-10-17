@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,6 +6,7 @@ public class CombinationLock : MonoBehaviour
 {
     [Tooltip("Left to right.")]
     public NumberWheel[] wheels;
+    public bool useEvaluation = true;
     [Tooltip("Symbols between the wheels, left to right. Use + - x / ^")]
     public string operators = "xxx";
     public float target = 250f;
@@ -22,6 +24,12 @@ public class CombinationLock : MonoBehaviour
 
     public float Evaluate()
     {
+        if (!useEvaluation)
+        {
+            string combinedString = string.Concat(wheels.Select(w => w.value.ToString()));
+            return float.Parse(combinedString);
+        }
+
         float result = wheels[0].value;
         for (int i = 1; i < wheels.Length; i++)
         {
