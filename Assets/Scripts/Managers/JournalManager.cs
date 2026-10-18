@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Pages sit side by side as direct children of Content. To add a page, duplicate one and place it to the right.
+// Notepad-style journal. Pages are stacked direct children of Content, first child = first page.
+// Each page needs its Pivot Y set to 1 (top) so it flips from the binding.
+// Give each page a full-size child named "Back" (last child, so it covers the clues). It shows while the page is flipped over.
+// To add a page, duplicate one and drag it to where you want it in the order.
 public class JournalManager : MonoBehaviour
 {
     public PlayerInteractor interactor;
 
     [Header("Layout")]
     public RectTransform panel;
-    public RectTransform viewport;
-    [Tooltip("Holds the pages. Each direct child is one page.")]
+    [Tooltip("Holds the pages. Each direct child is one page, top child = first page.")]
     public RectTransform content;
 
     [Header("Open / Close")]
@@ -19,22 +21,23 @@ public class JournalManager : MonoBehaviour
     public float slideDistance = 1200f;
     public float slideTime = 0.35f;
 
-    [Header("Edge Scroll")]
-    [Tooltip("Part of the screen width at the left/right that scrolls (0.1 = 10%).")]
+    [Header("Page Flip")]
+    [Tooltip("Part of the screen height at the top/bottom that flips pages (0.1 = 10%).")]
     public float edgeSize = 0.1f;
-    public float scrollSpeed = 1500f;
-    [Tooltip("How far past the first/last page you can scroll, as a part of the viewport width (0.1 = 10%).")]
-    public float edgePadding = 0.05f;
+    public float flipTime = 0.25f;
+    [Tooltip("Wait after a flip before the next one can start.")]
+    public float flipDelay = 0.15f;
 
     [Header("New Clues")]
-    [Tooltip("Time to slide over to the clue's page.")]
-    public float scrollToClueTime = 0.5f;
     public float fadeTime = 0.6f;
     public float pauseAfterClue = 0.3f;
 
     readonly List<GameObject> queue = new List<GameObject>();
+    readonly List<RectTransform> pages = new List<RectTransform>();
+    int current;
     Vector2 shownPos;
-    bool canScroll;
+    bool canFlip;
+    bool flipping;
 
     void Awake()
     {
@@ -45,6 +48,18 @@ public class JournalManager : MonoBehaviour
         // Clues from older runs :)
         foreach (Transform t in content.GetComponentsInChildren<Transform>(true))
             if (PlayerPrefs.GetInt(SaveKey(t.gameObject)) == 1) t.gameObject.SetActive(true);
+
+        foreach (Transform child in content) pages.Add((RectTransform)child);
+
+        // Reverse the draw order so the first page sits on top of the stack.
+        foreach (RectTransform page in pages) page.SetAsFirstSibling();
+
+        // Pages before the current one are flipped away.
+        for (int i = 0; i < pages.Count; i++)
+        {
+            SetFlip(pages[i], 1f);
+            pages[i].gameObject.SetActive(i >= current);
+        }
     }
 
     void Update()
@@ -52,7 +67,7 @@ public class JournalManager : MonoBehaviour
         if (!interactor.Busy && JournalPressed())
             interactor.RunSequence(Journal());
 
-        if (canScroll) EdgeScroll();
+        if (canFlip && !flipping) EdgeFlip();
     }
 
     public void Unlock(GameObject clue)
@@ -90,10 +105,11 @@ public class JournalManager : MonoBehaviour
             yield return Reveal(clue);
         }
 
-        canScroll = true;
+        canFlip = true;
         do yield return null;
         while (!JournalPressed());
-        canScroll = false;
+        canFlip = false;
+        while (flipping) yield return null; // let a flip in progress finish
 
         yield return Slide(shownPos, shownPos + Vector2.down * slideDistance);
         panel.gameObject.SetActive(false);
@@ -106,13 +122,8 @@ public class JournalManager : MonoBehaviour
         if (group == null) group = clue.AddComponent<CanvasGroup>();
         group.alpha = 0f;
         clue.SetActive(true);
-        Canvas.ForceUpdateCanvases();
 
-        // Center the clue's page in the viewport.
-        RectTransform page = PageOf(clue);
-        Vector3 pageCenter = viewport.InverseTransformPoint(page.TransformPoint(page.rect.center));
-        float target = ClampScroll(content.anchoredPosition.x - (pageCenter.x - viewport.rect.center.x));
-        yield return ScrollTo(target);
+        yield return FlipTo(PageIndexOf(clue));
 
         for (float t = 0f; t < fadeTime; t += Time.deltaTime)
         {
@@ -125,24 +136,75 @@ public class JournalManager : MonoBehaviour
     }
 
     // Walks up from the clue to the page it lives on (the direct child of Content).
-    RectTransform PageOf(GameObject clue)
+    int PageIndexOf(GameObject clue)
     {
         Transform t = clue.transform;
         while (t.parent != null && t.parent != content) t = t.parent;
-        return (RectTransform)t;
+        return pages.IndexOf((RectTransform)t);
     }
 
-    IEnumerator ScrollTo(float x)
+    // Mouse at the bottom flips the front page up (next page), mouse at the top flips one back down.
+    void EdgeFlip()
     {
-        float start = content.anchoredPosition.x;
-        if (Mathf.Abs(start - x) < 1f) yield break; // already on this page
+        Mouse mouse = Mouse.current;
+        if (mouse == null) return;
 
-        for (float t = 0f; t < scrollToClueTime; t += Time.deltaTime)
+        float y = mouse.position.ReadValue().y / Screen.height;
+        if (y < edgeSize && current < pages.Count - 1) StartCoroutine(Flip(1));
+        else if (y > 1f - edgeSize && current > 0) StartCoroutine(Flip(-1));
+    }
+
+    // Flips one page at a time until the given page is in front.
+    IEnumerator FlipTo(int index)
+    {
+        if (index < 0) yield break;
+        while (current != index)
+            yield return Flip(index > current ? 1 : -1);
+    }
+
+    IEnumerator Flip(int dir)
+    {
+        flipping = true;
+
+        if (dir > 0)
         {
-            SetScroll(Mathf.SmoothStep(start, x, t / scrollToClueTime));
+            // Front page folds up over the binding, showing its back, revealing the next one.
+            RectTransform page = pages[current];
+            current++;
+            yield return FlipScale(page, 1f, -1f);
+            page.gameObject.SetActive(false);
+            SetFlip(page, 1f);
+        }
+        else
+        {
+            // Previous page folds back down from over the binding onto the front.
+            current--;
+            RectTransform page = pages[current];
+            page.gameObject.SetActive(true);
+            yield return FlipScale(page, -1f, 1f);
+        }
+
+        yield return new WaitForSeconds(flipDelay);
+        flipping = false;
+    }
+
+    // Scaling Y through 0 around the top pivot reads as the page rotating over the binding.
+    IEnumerator FlipScale(RectTransform page, float from, float to)
+    {
+        for (float t = 0f; t < flipTime; t += Time.deltaTime)
+        {
+            SetFlip(page, Mathf.Lerp(from, to, Mathf.SmoothStep(0f, 1f, t / flipTime)));
             yield return null;
         }
-        SetScroll(x);
+        SetFlip(page, to);
+    }
+
+    // Negative Y = page is past the binding, so show its back instead of the front.
+    void SetFlip(RectTransform page, float scaleY)
+    {
+        page.localScale = new Vector3(1f, scaleY, 1f);
+        Transform back = page.Find("Back");
+        if (back != null) back.gameObject.SetActive(scaleY < 0f);
     }
 
     IEnumerator Slide(Vector2 from, Vector2 to)
@@ -153,39 +215,6 @@ public class JournalManager : MonoBehaviour
             yield return null;
         }
         panel.anchoredPosition = to;
-    }
-
-    void EdgeScroll()
-    {
-        Mouse mouse = Mouse.current;
-        if (mouse == null) return;
-
-        float x = mouse.position.ReadValue().x / Screen.width;
-        float dir = 0f;
-        if (x > 1f - edgeSize) dir = -1f;   // mouse on the right, move content left
-        else if (x < edgeSize) dir = 1f;
-
-        SetScroll(content.anchoredPosition.x + dir * scrollSpeed * Time.deltaTime);
-    }
-
-    void SetScroll(float x)
-    {
-        content.anchoredPosition = new Vector2(ClampScroll(x), content.anchoredPosition.y);
-    }
-
-    // Keeps the pages from scrolling too far past the first/last page.
-    float ClampScroll(float x)
-    {
-        Bounds pages = RectTransformUtility.CalculateRelativeRectTransformBounds(viewport, content);
-        Rect view = viewport.rect;
-        float pad = edgePadding * view.width;
-        float current = content.anchoredPosition.x;
-
-        float min = current + (view.xMax - pad) - pages.max.x;
-        float max = current + (view.xMin + pad) - pages.min.x;
-        if (max < min) max = min;
-
-        return Mathf.Clamp(x, min, max);
     }
 
     static bool JournalPressed()
