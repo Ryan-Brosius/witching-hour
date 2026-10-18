@@ -41,6 +41,10 @@ public class JournalManager : MonoBehaviour
         shownPos = panel.anchoredPosition;
         panel.anchoredPosition = shownPos + Vector2.down * slideDistance;
         panel.gameObject.SetActive(false);
+
+        // Clues from older runs :)
+        foreach (Transform t in content.GetComponentsInChildren<Transform>(true))
+            if (PlayerPrefs.GetInt(SaveKey(t.gameObject)) == 1) t.gameObject.SetActive(true);
     }
 
     void Update()
@@ -55,6 +59,19 @@ public class JournalManager : MonoBehaviour
     {
         if (clue.activeSelf || queue.Contains(clue)) return;
         queue.Add(clue);
+
+        PlayerPrefs.SetInt(SaveKey(clue), 1);
+        PlayerPrefs.Save();
+    }
+
+    static string SaveKey(GameObject clue) => "Journal_" + clue.name;
+
+    [ContextMenu("Clear Saved Clues")]
+    void ClearSave()
+    {
+        foreach (Transform t in content.GetComponentsInChildren<Transform>(true))
+            PlayerPrefs.DeleteKey(SaveKey(t.gameObject));
+        PlayerPrefs.Save();
     }
 
     IEnumerator Journal()
