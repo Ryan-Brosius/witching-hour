@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1992273076616603238}
   - component: {fileID: 1859173833644834773}
-  - component: {fileID: 7946063683078975721}
+  - component: {fileID: 1960251238401847310}
   - component: {fileID: 7790187304637074727}
   - component: {fileID: 8803053931659076096}
   m_Layer: 0
@@ -180,7 +180,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7946063683078975721
+--- !u!114 &1960251238401847310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,16 +189,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 8936509129148186571}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89841ce5cdea92844a215dff2214b70a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7837c17b12a6b79459d75fdd38359ab9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScreenInteractable
+  m_EditorClassIdentifier: Assembly-CSharp::ClockPuzzle
   range: 1.5
-  canInteract: 0
+  canInteract: 1
   lockedHint: 
   onInteract:
     m_PersistentCalls:
       m_Calls: []
-  screen: {fileID: 0}
+  hourHand: {fileID: 0}
+  minuteHand: {fileID: 0}
+  hourTarget: 85
+  minuteTarget: 300
+  tolerance: 12
+  onSolved:
+    m_PersistentCalls:
+      m_Calls: []
+  zoomPoint: {fileID: 0}
+  clockface: {fileID: 0}
+  solvedExitDelay: 1
 --- !u!114 &7790187304637074727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +224,7 @@ MonoBehaviour:
   openSprite: {fileID: 21300000, guid: a3936ba3aee06d640b512894ce05e99e, type: 3}
   closedSprite: {fileID: 21300000, guid: 39844559543519d4eb2151d2e152bbbb, type: 3}
   spriteRenderer: {fileID: 8279062962537399602}
-  gateInteractable: {fileID: 7946063683078975721}
+  gateInteractable: {fileID: 1960251238401847310}
   alwaysOpen: 0
 --- !u!82 &8803053931659076096
 AudioSource:

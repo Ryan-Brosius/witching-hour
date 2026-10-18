@@ -33,6 +33,16 @@ public class ClockfaceHandsUI : MonoBehaviour
         UpdateHands();
     }
 
+    public ClockHands Detach(Transform hand)
+    {
+        int i = clocks.FindIndex(c => c.hourHand == hand || c.minuteHand == hand);
+        if (i < 0) return default;
+
+        ClockHands clock = clocks[i];
+        clocks.RemoveAt(i);
+        return clock;
+    }
+
     void UpdateHands()
     {
         float minuteAngle = minute * 6f;

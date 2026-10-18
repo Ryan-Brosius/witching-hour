@@ -1,8 +1,12 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ClockPuzzle : MonoBehaviour
+// Goes on the Metal Gate. Press W to zoom in on a clock face on the tower and drag its hands.
+// Solving it, or pressing W again, zooms back out.
+public class ClockPuzzle : Interactable
 {
     public ClockHand hourHand;
     public ClockHand minuteHand;
@@ -14,14 +18,66 @@ public class ClockPuzzle : MonoBehaviour
     public float tolerance = 18f;
     public UnityEvent onSolved;
 
+    [Header("Zoom")]
+    [Tooltip("Empty in front of the clock face. The camera sits here and copies its rotation, so point its forward (blue) arrow at the clock.")]
+    public Transform zoomPoint;
+    [Tooltip("The script ticking the tower's clocks. This clock is taken out of it while you hold the hands, and for good once solved.")]
+    public ClockfaceHandsUI clockface;
+    public float solvedExitDelay = 1f;
+
     public bool Solved { get; private set; }
+    public bool Engaged { get; private set; }
+
+    CameraFollow cam;
+
+    void Awake()
+    {
+        cam = Camera.main.GetComponent<CameraFollow>();
+        hourHand.clock = this;
+        minuteHand.clock = this;
+    }
+
+    public override void Interact(PlayerInteractor player)
+    {
+        player.RunSequence(Inspect());
+    }
+
+    IEnumerator Inspect()
+    {
+        Transform oldTarget = cam.target;
+        Vector3 oldOffset = cam.offset;
+        bool oldCursor = Cursor.visible;
+
+        cam.target = zoomPoint;
+        cam.offset = Vector3.zero;
+        cam.matchTargetRotation = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        ClockfaceHandsUI.ClockHands ticking = clockface.Detach(minuteHand.transform);
+        Engaged = true;
+
+        bool wasSolved = Solved;
+        do yield return null;
+        while (!PlayerInteractor.InteractDown() && (wasSolved || !Solved));
+
+        Engaged = false;
+        if (!wasSolved && Solved) yield return new WaitForSeconds(solvedExitDelay);
+
+        // Left without solving: let the clock tick again.
+        if (!Solved && ticking.hourHand != null) clockface.clocks.Add(ticking);
+
+        cam.target = oldTarget;
+        cam.offset = oldOffset;
+        cam.matchTargetRotation = false;
+        Cursor.visible = oldCursor;
+    }
 
     public void Check()
     {
-        if (Solved || !Close(hourHand.angle, hourTarget) || !Close(minuteHand.angle, minuteTarget)) return;
+        if (Solved || !Close(hourHand.Angle, hourTarget) || !Close(minuteHand.Angle, minuteTarget)) return;
         Solved = true;
         onSolved.Invoke();
-        Debug.Log("Clock solved");
     }
 
     bool Close(float a, float b) => Mathf.Abs(Mathf.DeltaAngle(a, b)) <= tolerance;
@@ -31,8 +87,8 @@ public class ClockPuzzle : MonoBehaviour
         Vector3 center = hourHand != null ? hourHand.transform.position : transform.position;
         RectTransform rt = transform as RectTransform;
 
-        DrawHand(center, 200.0f, hourTarget, hourHand, new Color(0.3f, 0.8f, 1f));
-        DrawHand(center, 350.0f, minuteTarget, minuteHand, new Color(1f, 0.8f, 0.2f));
+        DrawHand(center, 1.0f, hourTarget, hourHand, new Color(0.3f, 0.8f, 1f));
+        DrawHand(center, 1.5f, minuteTarget, minuteHand, new Color(1f, 0.8f, 0.2f));
     }
 
     void DrawHand(Vector3 center, float length, float target, ClockHand hand, Color color)
@@ -53,8 +109,8 @@ public class ClockPuzzle : MonoBehaviour
 
         if (hand != null)
         {
-            Gizmos.color = Close(hand.angle, target) ? Color.green : Color.red;
-            Vector3 tip = center + Dir(hand.angle) * length * 1.05f;
+            Gizmos.color = Close(hand.Angle, target) ? Color.green : Color.red;
+            Vector3 tip = center + Dir(hand.Angle) * length * 1.05f;
             Gizmos.DrawLine(center, tip);
             Gizmos.DrawWireSphere(tip, length * 0.04f);
         }

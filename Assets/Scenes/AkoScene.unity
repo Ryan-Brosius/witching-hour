@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &26921433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 250486052834257902, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &40105258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3595183623731715581, guid: d0d9cec089273014288419dfe87e50ba, type: 3}
@@ -339,37 +344,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &44156490
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 44156491}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &44156491
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44156490}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.6, z: -8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &95592229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3595183623731715581, guid: d0d9cec089273014288419dfe87e50ba, type: 3}
@@ -790,6 +764,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 862714937}
   m_SourcePrefab: {fileID: 100100000, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
+--- !u!114 &200272563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8226391195735509655, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
 --- !u!212 &208504192 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1180692099836164672, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
@@ -803,6 +788,82 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2133930147}
     m_Modifications:
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: hourHand
+      value: 
+      objectReference: {fileID: 1233789874}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: clockface
+      value: 
+      objectReference: {fileID: 6292880157656363229}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: zoomPoint
+      value: 
+      objectReference: {fileID: 6292880157656363232}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: hourTarget
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: minuteHand
+      value: 
+      objectReference: {fileID: 1130514658}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: minuteTarget
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1588353149}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 563039329}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwapSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SwapSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpriteSwapperGate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SpriteSwapperGate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1992273076616603238, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.54
@@ -860,6 +921,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+--- !u!114 &284194902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9196648269388254031, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
 --- !u!1 &296322386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,6 +1499,82 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2133930147}
     m_Modifications:
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: hourHand
+      value: 
+      objectReference: {fileID: 1744215378}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: clockface
+      value: 
+      objectReference: {fileID: 6292880157656363229}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: zoomPoint
+      value: 
+      objectReference: {fileID: 26921433}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: hourTarget
+      value: 88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: minuteHand
+      value: 
+      objectReference: {fileID: 284194902}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: minuteTarget
+      value: 336
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1318370439}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 521487403}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwapSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SwapSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpriteSwapperGate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SpriteSwapperGate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1992273076616603238, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.5
@@ -1715,6 +1863,8 @@ MonoBehaviour:
   offset: {x: 0, y: 4.5, z: -6}
   pitch: 8
   smoothTime: 0.25
+  matchTargetRotation: 0
+  turnSpeed: 8
   shakeDuration: 0.3
   shakeStrength: 0.2
 --- !u!114 &441695608
@@ -1938,7 +2088,7 @@ MonoBehaviour:
   onSolved:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153619532801151983}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScreenInteractable, Assembly-CSharp
         m_MethodName: Unlock
         m_Mode: 1
@@ -8486,7 +8636,7 @@ PrefabInstance:
     - target: {fileID: 242711113267709795, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1588353147}
+      objectReference: {fileID: 0}
     - target: {fileID: 242711113267709795, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -9566,7 +9716,7 @@ PrefabInstance:
     - target: {fileID: 242711113267709795, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1169223582}
+      objectReference: {fileID: 0}
     - target: {fileID: 242711113267709795, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -10838,6 +10988,82 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2133930147}
     m_Modifications:
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: hourHand
+      value: 
+      objectReference: {fileID: 1563093280}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: clockface
+      value: 
+      objectReference: {fileID: 6292880157656363229}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: zoomPoint
+      value: 
+      objectReference: {fileID: 6292880157656363231}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: hourTarget
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: minuteHand
+      value: 
+      objectReference: {fileID: 200272563}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: minuteTarget
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1169223584}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 467794473}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwapSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SwapSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpriteSwapperGate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SpriteSwapperGate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1992273076616603238, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.3
@@ -11310,6 +11536,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+--- !u!114 &1130514658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1603969439065028186, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
 --- !u!1 &1153675319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3636601311795238999, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
@@ -11553,17 +11790,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3885599412825305640, guid: 7151832ed5bab2a499864fa9565e3104, type: 3}
   m_PrefabInstance: {fileID: 1713916739}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1169223582 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7946063683078975721, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
-  m_PrefabInstance: {fileID: 1068894392}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89841ce5cdea92844a215dff2214b70a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScreenInteractable
 --- !u!114 &1169223584 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7790187304637074727, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
@@ -11972,6 +12198,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1233789874 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5011183385427320445, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
 --- !u!4 &1261136166 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7508180759537901793, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
@@ -12020,7 +12257,7 @@ PrefabInstance:
     - target: {fileID: 242711113267709795, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1318370437}
+      objectReference: {fileID: 0}
     - target: {fileID: 242711113267709795, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -12426,17 +12663,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1992273076616603238, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
   m_PrefabInstance: {fileID: 352657330}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1318370437 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7946063683078975721, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
-  m_PrefabInstance: {fileID: 352657330}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89841ce5cdea92844a215dff2214b70a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScreenInteractable
 --- !u!114 &1318370439 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7790187304637074727, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
@@ -13473,6 +13699,17 @@ MonoBehaviour:
   lettersPerSound: 2
   minPitch: 0.9
   maxPitch: 1.15
+--- !u!114 &1563093280 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2441863854469604016, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
 --- !u!1 &1563528071
 GameObject:
   m_ObjectHideFlags: 0
@@ -13580,17 +13817,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fe65f9966e924d41a2958999deb5747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleScreen
---- !u!114 &1588353147 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7946063683078975721, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
-  m_PrefabInstance: {fileID: 245284106}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89841ce5cdea92844a215dff2214b70a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScreenInteractable
 --- !u!114 &1588353149 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7790187304637074727, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
@@ -14039,7 +14265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMoveTest
   cam: {fileID: 441695607}
-  point: {fileID: 44156491}
+  point: {fileID: 0}
 --- !u!4 &1645481571
 Transform:
   m_ObjectHideFlags: 0
@@ -14280,6 +14506,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0d9cec089273014288419dfe87e50ba, type: 3}
+--- !u!114 &1744215378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3199864615289267048, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
 --- !u!1001 &1757874848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16236,7 +16473,7 @@ MonoBehaviour:
   onSolved:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1169223582}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScreenInteractable, Assembly-CSharp
         m_MethodName: Unlock
         m_Mode: 1
@@ -17109,7 +17346,7 @@ MonoBehaviour:
   onSolved:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1588353147}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScreenInteractable, Assembly-CSharp
         m_MethodName: Unlock
         m_Mode: 1
@@ -17185,7 +17422,7 @@ MonoBehaviour:
   onSolved:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1318370437}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScreenInteractable, Assembly-CSharp
         m_MethodName: Unlock
         m_Mode: 1
@@ -17372,22 +17609,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a406b112987a94a9e631ece8f014e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteSwapperGate
---- !u!114 &1153619532801151983 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7946063683078975721, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
-  m_PrefabInstance: {fileID: 5488549112914573235}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89841ce5cdea92844a215dff2214b70a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScreenInteractable
 --- !u!82 &1153619532801151985 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8803053931659076096, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
   m_PrefabInstance: {fileID: 5488549112914573235}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1153619532801151986 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+  m_PrefabInstance: {fileID: 5488549112914573235}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7837c17b12a6b79459d75fdd38359ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockPuzzle
 --- !u!1001 &1555824363877538272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18154,6 +18391,74 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2133930147}
     m_Modifications:
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: hourHand
+      value: 
+      objectReference: {fileID: 6292880157656363228}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: clockface
+      value: 
+      objectReference: {fileID: 6292880157656363229}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: zoomPoint
+      value: 
+      objectReference: {fileID: 6292880157656363230}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: minuteHand
+      value: 
+      objectReference: {fileID: 6292880157656363227}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1153619532801151982}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1950772334}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwapSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SwapSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpriteSwapperGate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SpriteSwapperGate, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1960251238401847310, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1992273076616603238, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.5400009
@@ -18194,6 +18499,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7790187304637074727, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+      propertyPath: gateInteractable
+      value: 
+      objectReference: {fileID: 1153619532801151986}
     - target: {fileID: 7946063683078975721, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
       propertyPath: screen
       value: 
@@ -18420,6 +18729,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+--- !u!114 &6292880157656363227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8704224861170689390, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
+--- !u!114 &6292880157656363228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3099219182424837449, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
+--- !u!114 &6292880157656363229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8886213673015785909, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38fbfc0ab0b0a641ac9997244e3411c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockfaceHandsUI
+--- !u!4 &6292880157656363230 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 293709483149542863, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6292880157656363231 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1077181001350670902, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6292880157656363232 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7681620236825827067, guid: f45fda92f71e77e4ba3452b88bf1f121, type: 3}
+  m_PrefabInstance: {fileID: 6292880157656363226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6749413779229892137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18451,7 +18808,7 @@ PrefabInstance:
     - target: {fileID: 242711113267709795, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1153619532801151983}
+      objectReference: {fileID: 0}
     - target: {fileID: 242711113267709795, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -18759,4 +19116,3 @@ SceneRoots:
   - {fileID: 1297057492}
   - {fileID: 2021656337}
   - {fileID: 1645481571}
-  - {fileID: 44156491}

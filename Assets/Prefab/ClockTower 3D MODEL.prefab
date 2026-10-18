@@ -325,6 +325,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClockFace
       objectReference: {fileID: 0}
+    - target: {fileID: 5230205367802532184, guid: 2de96f4e59b178942a860bb28c242943, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0838515
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230205367802532184, guid: 2de96f4e59b178942a860bb28c242943, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.682914
+      objectReference: {fileID: 0}
     - target: {fileID: 5241188718901501273, guid: 2de96f4e59b178942a860bb28c242943, type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.8660254

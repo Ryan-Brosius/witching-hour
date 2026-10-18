@@ -32,6 +32,7 @@ Transform:
   m_Children:
   - {fileID: 5241188718901501273}
   - {fileID: 2168631362100802434}
+  - {fileID: 5230205367802532184}
   m_Father: {fileID: 5573716873099857586}
   m_LocalEulerAnglesHint: {x: 83, y: 0, z: 0}
 --- !u!212 &3898378694079568694
@@ -103,6 +104,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2168631362100802434}
   - component: {fileID: 2391553325984012510}
+  - component: {fileID: 3768815036845208057}
+  - component: {fileID: 121717970387217551}
   m_Layer: 0
   m_Name: MinuteHand
   m_TagString: Untagged
@@ -184,6 +187,41 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &3768815036845208057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736384744486817492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
+  snapDegrees: 6
+  clock: {fileID: 0}
+--- !u!65 &121717970387217551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736384744486817492}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0400003, y: 3.0600004, z: 0.20000008}
+  m_Center: {x: -0.01236171, y: 1.280217, z: -0.0000009536743}
 --- !u!1 &4276266969739616529
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +282,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5241188718901501273}
   - component: {fileID: 5297926849007244996}
+  - component: {fileID: 7459289498619124190}
+  - component: {fileID: 2315293023957641169}
   m_Layer: 0
   m_Name: HourHand
   m_TagString: Untagged
@@ -325,3 +365,69 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &7459289498619124190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551146251913323140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e77188c0b0f6c4fa57a1ffe8fbde4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClockHand
+  snapDegrees: 6
+  clock: {fileID: 0}
+--- !u!65 &2315293023957641169
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551146251913323140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4800007, y: 4.480001, z: 0.20000009}
+  m_Center: {x: -0.037119184, y: 1.9110419, z: -0.000001430788}
+--- !u!1 &8272263668405034684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5230205367802532184}
+  m_Layer: 0
+  m_Name: Camera Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5230205367802532184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8272263668405034684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8072516835594145461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

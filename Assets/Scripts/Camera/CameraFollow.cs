@@ -11,6 +11,11 @@ public class CameraFollow : MonoBehaviour
     [Tooltip("Higher = lazier, floatier follow.")]
     public float smoothTime = 0.25f;
 
+    [Tooltip("Copy the target's rotation instead of using pitch (used when zooming into a clock).")]
+    public bool matchTargetRotation;
+    [Tooltip("How quickly the camera turns to its new rotation.")]
+    public float turnSpeed = 8f;
+
     [Header("Shake")]
     [Tooltip("Used by Shake() with no arguments, e.g. from a UnityEvent.")]
     public float shakeDuration = 0.3f;
@@ -31,9 +36,9 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        followPos = Vector3.SmoothDamp(followPos, target.position + offset, ref velocity, smoothTime);
-        transform.position = followPos + ShakeOffset();
-        transform.rotation = Quaternion.Euler(pitch, 0f, 0f);
+        transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref velocity, smoothTime);
+        Quaternion goal = matchTargetRotation ? target.rotation : Quaternion.Euler(pitch, 0f, 0f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, goal, turnSpeed * Time.deltaTime);
     }
 
     public void Shake() => Shake(shakeDuration, shakeStrength);
