@@ -67,7 +67,9 @@ public class JournalManager : MonoBehaviour
         if (!interactor.Busy && JournalPressed())
             interactor.RunSequence(Journal());
 
-        if (canFlip && !flipping) EdgeFlip();
+        if (canFlip && !flipping) KeyFlip();
+
+        //if (canFlip && !flipping) EdgeFlip();
     }
 
     public void Unlock(GameObject clue)
@@ -221,5 +223,14 @@ public class JournalManager : MonoBehaviour
     {
         Keyboard kb = Keyboard.current;
         return kb != null && kb.sKey.wasPressedThisFrame;
+    }
+
+    void KeyFlip()
+    {
+        Keyboard kb = Keyboard.current;
+        if (kb == null) return;
+
+        if ((kb.dKey.isPressed || kb.rightArrowKey.isPressed) && current < pages.Count - 1) StartCoroutine(Flip(1));
+        else if ((kb.aKey.isPressed || kb.leftArrowKey.isPressed) && current > 0) StartCoroutine(Flip(-1));
     }
 }
