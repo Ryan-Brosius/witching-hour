@@ -14,7 +14,8 @@ public class Doorbell : Interactable
     public override void Interact(PlayerInteractor player)
     {
         StopAllCoroutines();
-        ringSound.Play();
+        if (ringSound != null ) ringSound.Play();
+
     }
 
     public override void InteractReleased(PlayerInteractor player, float heldTime)
@@ -23,7 +24,7 @@ public class Doorbell : Interactable
 
         // Stop the chime so its total length matches the ring type.
         // Fix later so it sounds better :)
-        StartCoroutine(StopRing((isLong ? longRing : shortRing) - heldTime));
+        StartCoroutine(StopRing((isLong ? longRing : shortRing)));
 
         if (puzzle != null) puzzle.Ring(this, isLong ? '-' : '.');
     }
@@ -31,6 +32,6 @@ public class Doorbell : Interactable
     IEnumerator StopRing(float delay)
     {
         yield return new WaitForSeconds(delay);
-        ringSound.Stop();
+        if (ringSound != null) ringSound.Stop();
     }
 }
