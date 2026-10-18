@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// Pages sit side by side as direct children of Content. To add a page, duplicate one and place it to the right.
 public class JournalManager : MonoBehaviour
 {
     public PlayerInteractor interactor;
@@ -10,6 +11,7 @@ public class JournalManager : MonoBehaviour
     [Header("Layout")]
     public RectTransform panel;
     public RectTransform viewport;
+    [Tooltip("Holds the pages. Each direct child is one page.")]
     public RectTransform content;
 
     [Header("Open / Close")]
@@ -18,13 +20,14 @@ public class JournalManager : MonoBehaviour
     public float slideTime = 0.35f;
 
     [Header("Edge Scroll")]
-    [Tooltip("Part of the screen height at the top/bottom that scrolls (0.1 = 10%).")]
+    [Tooltip("Part of the screen width at the left/right that scrolls (0.1 = 10%).")]
     public float edgeSize = 0.1f;
-    public float scrollSpeed = 800f;
-    [Tooltip("How far past the page's top/bottom edge you can scroll, as a part of the viewport height (0.1 = 10%).")]
-    public float edgePadding = 0.1f;
+    public float scrollSpeed = 1500f;
+    [Tooltip("How far past the first/last page you can scroll, as a part of the viewport width (0.1 = 10%).")]
+    public float edgePadding = 0.05f;
 
     [Header("New Clues")]
+    [Tooltip("Time to slide over to the clue's page.")]
     public float scrollToClueTime = 0.5f;
     public float fadeTime = 0.6f;
     public float pauseAfterClue = 0.3f;
@@ -88,9 +91,10 @@ public class JournalManager : MonoBehaviour
         clue.SetActive(true);
         Canvas.ForceUpdateCanvases();
 
-        RectTransform rect = (RectTransform)clue.transform;
-        Vector3 clueCenter = viewport.InverseTransformPoint(rect.TransformPoint(rect.rect.center));
-        float target = ClampScroll(content.anchoredPosition.y - (clueCenter.y - viewport.rect.center.y));
+        // Center the clue's page in the viewport.
+        RectTransform page = PageOf(clue);
+        Vector3 pageCenter = viewport.InverseTransformPoint(page.TransformPoint(page.rect.center));
+        float target = ClampScroll(content.anchoredPosition.x - (pageCenter.x - viewport.rect.center.x));
         yield return ScrollTo(target);
 
         for (float t = 0f; t < fadeTime; t += Time.deltaTime)
@@ -103,15 +107,25 @@ public class JournalManager : MonoBehaviour
         yield return new WaitForSeconds(pauseAfterClue);
     }
 
-    IEnumerator ScrollTo(float y)
+    // Walks up from the clue to the page it lives on (the direct child of Content).
+    RectTransform PageOf(GameObject clue)
     {
-        float start = content.anchoredPosition.y;
+        Transform t = clue.transform;
+        while (t.parent != null && t.parent != content) t = t.parent;
+        return (RectTransform)t;
+    }
+
+    IEnumerator ScrollTo(float x)
+    {
+        float start = content.anchoredPosition.x;
+        if (Mathf.Abs(start - x) < 1f) yield break; // already on this page
+
         for (float t = 0f; t < scrollToClueTime; t += Time.deltaTime)
         {
-            SetScroll(Mathf.SmoothStep(start, y, t / scrollToClueTime));
+            SetScroll(Mathf.SmoothStep(start, x, t / scrollToClueTime));
             yield return null;
         }
-        SetScroll(y);
+        SetScroll(x);
     }
 
     IEnumerator Slide(Vector2 from, Vector2 to)
@@ -129,31 +143,32 @@ public class JournalManager : MonoBehaviour
         Mouse mouse = Mouse.current;
         if (mouse == null) return;
 
-        float y = mouse.position.ReadValue().y / Screen.height;
+        float x = mouse.position.ReadValue().x / Screen.width;
         float dir = 0f;
-        if (y > 1f - edgeSize) dir = -1f;
-        else if (y < edgeSize) dir = 1f;
+        if (x > 1f - edgeSize) dir = -1f;   // mouse on the right, move content left
+        else if (x < edgeSize) dir = 1f;
 
-        SetScroll(content.anchoredPosition.y + dir * scrollSpeed * Time.deltaTime);
+        SetScroll(content.anchoredPosition.x + dir * scrollSpeed * Time.deltaTime);
     }
 
-    void SetScroll(float y)
+    void SetScroll(float x)
     {
-        content.anchoredPosition = new Vector2(content.anchoredPosition.x, ClampScroll(y));
+        content.anchoredPosition = new Vector2(ClampScroll(x), content.anchoredPosition.y);
     }
 
-    float ClampScroll(float y)
+    // Keeps the pages from scrolling too far past the first/last page.
+    float ClampScroll(float x)
     {
-        Bounds page = RectTransformUtility.CalculateRelativeRectTransformBounds(viewport, content);
+        Bounds pages = RectTransformUtility.CalculateRelativeRectTransformBounds(viewport, content);
         Rect view = viewport.rect;
-        float pad = edgePadding * view.height;
-        float current = content.anchoredPosition.y;
+        float pad = edgePadding * view.width;
+        float current = content.anchoredPosition.x;
 
-        float min = current + (view.yMax - pad) - page.max.y;
-        float max = current + (view.yMin + pad) - page.min.y;
+        float min = current + (view.xMax - pad) - pages.max.x;
+        float max = current + (view.xMin + pad) - pages.min.x;
         if (max < min) max = min;
 
-        return Mathf.Clamp(y, min, max);
+        return Mathf.Clamp(x, min, max);
     }
 
     static bool JournalPressed()
