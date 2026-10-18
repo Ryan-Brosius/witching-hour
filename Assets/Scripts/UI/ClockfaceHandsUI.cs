@@ -11,18 +11,36 @@ public class ClockfaceHandsUI : MonoBehaviour
     }
 
     [Range(0, 23)] public int hour = 2;
-    [Tooltip("Can be fractional (e.g. 50.5) so the hands move smoothly.")]
     [Range(0f, 60f)] public float minute = 50f;
+    public float tweenTime = 0.5f;
 
     public List<ClockHands> clocks = new List<ClockHands>();
 
+    float shown;
+    float tweenFrom;
+    float tweenStart = -1f;
+
+    float Target => hour * 60f + minute;
+
+    void Awake()
+    {
+        shown = Target;
+    }
+
     void Update()
     {
+        if (tweenStart >= 0f)
+        {
+            float t = Mathf.Clamp01((Time.time - tweenStart) / tweenTime);
+            shown = Mathf.LerpUnclamped(tweenFrom, Target, EaseOutBack(t)); // small overshoot, like a real tick
+            if (t >= 1f) tweenStart = -1f;
+        }
         UpdateHands();
     }
 
     void OnValidate()
     {
+        shown = Target;
         UpdateHands();
     }
 
@@ -30,7 +48,8 @@ public class ClockfaceHandsUI : MonoBehaviour
     {
         hour = newHour;
         minute = newMinute;
-        UpdateHands();
+        tweenFrom = shown;
+        tweenStart = Time.time;
     }
 
     public ClockHands Detach(Transform hand)
@@ -45,13 +64,20 @@ public class ClockfaceHandsUI : MonoBehaviour
 
     void UpdateHands()
     {
-        float minuteAngle = minute * 6f;
-        float hourAngle = (hour % 12) * 30f + minute * 0.5f;
+        float minuteAngle = (shown % 60f) * 6f;
+        float hourAngle = (shown / 60f % 12f) * 30f;
 
         foreach (ClockHands clock in clocks)
         {
             if (clock.minuteHand != null) clock.minuteHand.localEulerAngles = new Vector3(0f, 0f, -hourAngle);
             if (clock.hourHand != null) clock.hourHand.localEulerAngles = new Vector3(0f, 0f, -minuteAngle);
         }
+    }
+
+    static float EaseOutBack(float t)
+    {
+        const float s = 1.70158f;
+        t -= 1f;
+        return 1f + (s + 1f) * t * t * t + s * t * t;
     }
 }
