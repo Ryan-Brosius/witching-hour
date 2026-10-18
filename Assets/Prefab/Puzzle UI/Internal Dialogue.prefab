@@ -54,7 +54,7 @@ MonoBehaviour:
   text: {fileID: 6105256427511763923}
   group: {fileID: 7584917530837002366}
   charsPerSecond: 45
-  stayTime: 2.5
+  stayTime: 3
   fadeTime: 0.4
 --- !u!225 &7584917530837002366
 CanvasGroup:
@@ -66,7 +66,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &2223123492730789130
 GameObject:

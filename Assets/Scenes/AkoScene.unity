@@ -1470,7 +1470,7 @@ PrefabInstance:
     - target: {fileID: 7946063683078975721, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
       propertyPath: screen
       value: 
-      objectReference: {fileID: 699582774}
+      objectReference: {fileID: 1261442345}
     - target: {fileID: 7946063683078975721, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
       propertyPath: lockedHint
       value: 
@@ -1966,6 +1966,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: InternalDialogue, Assembly-CSharp
         m_MethodName: Say
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: I heard a Gate slide open!
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1153619532801151985}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11563,6 +11575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a406b112987a94a9e631ece8f014e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteSwapperGate
+--- !u!82 &1169223586 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8803053931659076096, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+  m_PrefabInstance: {fileID: 1068894392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1193116105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13585,6 +13602,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24a406b112987a94a9e631ece8f014e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteSwapperGate
+--- !u!82 &1588353151 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8803053931659076096, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+  m_PrefabInstance: {fileID: 245284106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1590680917
 GameObject:
   m_ObjectHideFlags: 0
@@ -13767,6 +13789,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!82 &1606323860 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8803053931659076096, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+  m_PrefabInstance: {fileID: 352657330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1608914230
 GameObject:
   m_ObjectHideFlags: 0
@@ -13884,7 +13911,7 @@ MonoBehaviour:
   puzzle: {fileID: 2133930149}
   cam: {fileID: 441695607}
   zoomTarget: {fileID: 907769438}
-  zoomOffset: {x: 0, y: 0.5, z: -5}
+  zoomOffset: {x: 0, y: -0.5, z: -5}
   solvedExitDelay: 1
 --- !u!1 &1626185413
 GameObject:
@@ -16245,6 +16272,18 @@ MonoBehaviour:
           m_StringArgument: I heard a Gate slide open!
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1169223586}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: I heard a Gate slide open!
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2049951474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17106,6 +17145,18 @@ MonoBehaviour:
           m_StringArgument: I heard a Gate slide open!
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1588353151}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: I heard a Gate slide open!
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2133930149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17162,6 +17213,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: InternalDialogue, Assembly-CSharp
         m_MethodName: Say
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: I heard a Gate slide open!
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1606323860}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -17320,6 +17383,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89841ce5cdea92844a215dff2214b70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScreenInteractable
+--- !u!82 &1153619532801151985 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8803053931659076096, guid: 3dec3b4342dcebd4fa5bd4bb3fabcd16, type: 3}
+  m_PrefabInstance: {fileID: 5488549112914573235}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1555824363877538272
 PrefabInstance:
   m_ObjectHideFlags: 0
