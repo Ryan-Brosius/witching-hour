@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class WindowLight : MonoBehaviour, IPointerClickHandler
+public class WindowLight : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public bool isOn;
     [Tooltip("The glow sprite, Light, etc. Shown while on.")]
@@ -27,5 +27,15 @@ public class WindowLight : MonoBehaviour, IPointerClickHandler
         isOn = !isOn;
         lightObject.SetActive(isOn);
         if (toggleSound != null) toggleSound.Play();
+    }
+
+    public void OnPointerEnter(PointerEventData e)
+    {
+        if (house.Engaged) CursorManager.Instance.SetHover(true);
+    }
+
+    public void OnPointerExit(PointerEventData e)
+    {
+        CursorManager.Instance.SetHover(false);
     }
 }

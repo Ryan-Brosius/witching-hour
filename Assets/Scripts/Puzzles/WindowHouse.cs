@@ -37,6 +37,7 @@ public class WindowHouse : Interactable
         do yield return null;
         while (!PlayerInteractor.InteractDown() && (wasSolved || !puzzle.Solved));
 
+        CursorManager.Instance.SetHover(false);
         Engaged = false;
         if (!wasSolved && puzzle.Solved) yield return new WaitForSeconds(solvedExitDelay);
 

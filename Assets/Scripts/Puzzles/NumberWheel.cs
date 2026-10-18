@@ -21,7 +21,11 @@ public class NumberWheel : MonoBehaviour, IPointerClickHandler, IBeginDragHandle
         label.text = value.ToString();
     }
 
-    public void OnPointerClick(PointerEventData e) => Shift(1);
+    public void OnPointerClick(PointerEventData e)
+    {
+        if (e.dragging) return;
+        Shift(1);
+    }
 
     public void OnBeginDrag(PointerEventData e) => dragAmount = 0f;
 
