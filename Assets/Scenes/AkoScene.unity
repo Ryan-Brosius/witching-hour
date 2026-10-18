@@ -11167,23 +11167,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
       propertyPath: lines.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
       propertyPath: 'lines.Array.data[0]'
-      value: "I really can\u2019t decipher this"
+      value: "I really can\u2019t decipher this letter"
       objectReference: {fileID: 0}
     - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
       propertyPath: 'lines.Array.data[1]'
-      value: "It\u2019s like after every step forward"
+      value: "Without the key, it\u2019s all Roman to me"
       objectReference: {fileID: 0}
     - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
       propertyPath: 'lines.Array.data[2]'
-      value: I get sent even further back
+      value: "No, wait\u2026 what was the saying?"
       objectReference: {fileID: 0}
     - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
       propertyPath: 'lines.Array.data[3]'
       value: Then, I just get stuck
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1292959456}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1370965325}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Unlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Say
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: JournalManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: InternalDialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1292959457}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: I found a new Clue! Press S to check
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144749004416346584, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
+      propertyPath: onInteract.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7508180759537901793, guid: dccc4e8668f41764c95d72fb5d8e3a78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12286,6 +12350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365809a405702cc489fad1e592f80829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JournalManager
+--- !u!1 &1292959457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9062257133737641561, guid: 87a4cdad04e6036468e8e0fe1a29a3e0, type: 3}
+  m_PrefabInstance: {fileID: 1292959454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1297057490
 GameObject:
   m_ObjectHideFlags: 0
@@ -13329,6 +13398,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5420474249558573086, guid: 247073c7f9044474894347d6e65aee1e, type: 3}
   m_PrefabInstance: {fileID: 6749413779229892137}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1534973251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5154639509890830213, guid: 87a4cdad04e6036468e8e0fe1a29a3e0, type: 3}
+  m_PrefabInstance: {fileID: 1292959454}
   m_PrefabAsset: {fileID: 0}
 --- !u!212 &1543003793 stripped
 SpriteRenderer:
@@ -15564,6 +15638,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
@@ -15587,6 +15669,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1973477904}
     - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1292959456}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1370965325}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Lock
       objectReference: {fileID: 0}
@@ -15607,6 +15701,14 @@ PrefabInstance:
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: Unlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: Say
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: SpriteSwapperGate, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -15621,6 +15723,34 @@ PrefabInstance:
     - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
       propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
       value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: JournalManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: InternalDialogue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1534973251}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_StringArgument
+      value: I found a new Clue! Press S to check
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821881899215760710, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
+      propertyPath: onSolved.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6915677827967559334, guid: 1f0376ee966c43a43a73b97f3de4afa7, type: 3}
       propertyPath: m_Name
