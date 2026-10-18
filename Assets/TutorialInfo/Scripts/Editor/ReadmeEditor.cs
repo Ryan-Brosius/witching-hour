@@ -224,7 +224,7 @@ public class ReadmeEditor : Editor
 
         m_Initialized = true;
     }
-
+    #if UNITY_EDITOR
     bool LinkLabel(GUIContent label, params GUILayoutOption[] options)
     {
         var position = GUILayoutUtility.GetRect(label, LinkStyle, options);
@@ -239,4 +239,5 @@ public class ReadmeEditor : Editor
 
         return GUI.Button(position, label, LinkStyle);
     }
+    #endif 
 }

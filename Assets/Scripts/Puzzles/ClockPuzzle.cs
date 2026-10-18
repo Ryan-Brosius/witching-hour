@@ -82,6 +82,8 @@ public class ClockPuzzle : Interactable
 
     bool Close(float a, float b) => Mathf.Abs(Mathf.DeltaAngle(a, b)) <= tolerance;
 
+    #if UNITY_EDITOR
+
     void OnDrawGizmos()
     {
         Vector3 center = hourHand != null ? hourHand.transform.position : transform.position;
@@ -123,4 +125,5 @@ public class ClockPuzzle : Interactable
         float r = degrees * Mathf.Deg2Rad;
         return transform.rotation * new Vector3(Mathf.Sin(r), Mathf.Cos(r), 0f);
     }
+    #endif
 }
