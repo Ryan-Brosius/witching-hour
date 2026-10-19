@@ -10353,7 +10353,7 @@ MonoBehaviour:
   - {fileID: 1068894393}
   - {fileID: 352657331}
   interactor: {fileID: 595441186}
-  timeManager: {fileID: 0}
+  timeManager: {fileID: 805931820}
   onComplete:
     m_PersistentCalls:
       m_Calls:
@@ -10384,6 +10384,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &805931820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3897497655860475531, guid: b23668a802e8e554caac212b9d5df352, type: 3}
+  m_PrefabInstance: {fileID: 2772627593775008947}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805931809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2190600eb28bdc479aea54e500f48a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeManager
 --- !u!4 &827263820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3305547896818745190, guid: f88254cc3eaa95147ae276ebc468ee8f, type: 3}
@@ -13580,7 +13591,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 50.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15460,7 +15471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1480990243
 RectTransform:
   m_ObjectHideFlags: 0

@@ -230,7 +230,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 1529.7}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &65157245
 MonoBehaviour:
@@ -267,11 +267,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<size=180%><b>WITCHING HOUR</b></size>\r\n<size=90%><i>Made for PHL Game
-    Jam 2026 in 9 days</i></size>\r\n\r\n\r\n\r\n<size=120%><b>Game Design</b></size>\r\nAkoreyu\r\n\r\n\r\n<size=120%><b>Programming</b></size>\r\nRyan
+    Jam 2026 in 9 days</i></size>\r\n\r\n\r\n\r\n<size=120%><b>Game Design</b></size>\r\nakoreyu\r\n\r\n\r\n<size=120%><b>Programming</b></size>\r\nRyan
     \"Tacocat12\" Brosius\r\n\r\n\r\n<size=120%><b>Art</b></size>\r\nNoriknights\nChizu\r\n\r\n\r\n<size=120%><b>Assets</b></size>\r\nUnderdog
     Font by Sergey Steblina & Jovanny Lemonad\nQuintessential Font by Astigmatic\r\n400
-    Sounds Pack by Chequered Ink\nWeather Elements Pack by HeltonYan\r\n\r\n\r\n<size=120%><b>Special
-    Thanks</b></size>\nTacocat's cat Leona\nNoriknights's cat Yule \r\nOur playtesters\r\n\r\n\r\n\r\n<size=110%><i>Thank
+    Sounds Pack by Chequered Ink\nWeek 35 Reverence music by Absolution\nWeather
+    Elements Pack by HeltonYan\r\n\r\n\r\n<size=120%><b>Special Thanks</b></size>\nTacocat's
+    cat Leona\nNoriknights's cat Yule \r\nOur playtesters\r\n\r\n\r\n\r\n<size=110%><i>Thank
     you for playing.</i></size>\r\n\r\n\r\n<size=80%><color=#888888>The bells will
     ring again at 2:50.</color></size>"
   m_isRightToLeft: 0
@@ -6486,7 +6487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1512480612
 RectTransform:
   m_ObjectHideFlags: 0
