@@ -81,7 +81,13 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        if (!leaving) StartCoroutine(StartGame());
+        if (!leaving)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+
+            StartCoroutine(StartGame());
+        }
     }
 
     public void Quit() => Application.Quit();
