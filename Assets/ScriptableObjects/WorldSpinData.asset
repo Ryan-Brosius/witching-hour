@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WorldSpinData
   m_EditorClassIdentifier: Assembly-CSharp::WorldSpinData
   walkRadius: 20
-  maxSpeed: 6
+  maxSpeed: 8
   acceleration: 12
   deceleration: 18
   invertDirection: 0
