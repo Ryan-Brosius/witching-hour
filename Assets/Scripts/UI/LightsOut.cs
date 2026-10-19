@@ -6,6 +6,10 @@ public class LightsOut : MonoBehaviour
 {
     public float fadeDuration = 3f;
     public Image lossScreen;
+    public CanvasGroup endingText;
+
+    public float textDelay = 1.5f;
+    public float textFadeDuration = 2f;
 
     private Light[] lights;
 
@@ -27,6 +31,12 @@ public class LightsOut : MonoBehaviour
         for (int i = 0; i < lights.Length; i++)
         {
             startIntensities[i] = lights[i].intensity;
+        }
+
+        if (endingText != null)
+        {
+            endingText.alpha = 0f;
+            endingText.gameObject.SetActive(false);
         }
 
         if (lossScreen != null)
@@ -76,6 +86,27 @@ public class LightsOut : MonoBehaviour
             Color color = lossScreen.color;
             color.a = 1f;
             lossScreen.color = color;
+        }
+
+        if (endingText != null)
+        {
+            endingText.gameObject.SetActive(true);
+            endingText.alpha = 0f;
+
+            float textElapsed = 0f;
+
+            while (textElapsed < textFadeDuration)
+            {
+                textElapsed += Time.deltaTime;
+
+                endingText.alpha = Mathf.Clamp01(
+                    textElapsed / textFadeDuration
+                );
+
+                yield return null;
+            }
+
+            endingText.alpha = 1f;
         }
     }
 }
