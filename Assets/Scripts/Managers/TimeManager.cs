@@ -31,6 +31,7 @@ public class TimeManager : MonoBehaviour
     public UnityEvent onTimeUp;
 
     public int MinutesPassed { get; private set; }
+    public float GameSeconds => (MinutesPassed + timer / secondsPerMinute) * 60f;
 
     float timer;
 

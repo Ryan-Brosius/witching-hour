@@ -10353,6 +10353,7 @@ MonoBehaviour:
   - {fileID: 1068894393}
   - {fileID: 352657331}
   interactor: {fileID: 595441186}
+  timeManager: {fileID: 0}
   onComplete:
     m_PersistentCalls:
       m_Calls:
@@ -10360,6 +10361,21 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LightsUp, Assembly-CSharp
         m_MethodName: StartTransition
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCompleteTime:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1480990246}
+        m_TargetAssemblyTypeName: WinTimeText, Assembly-CSharp
+        m_MethodName: SetTime
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13564,7 +13580,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.15
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15437,13 +15453,14 @@ GameObject:
   - component: {fileID: 1480990243}
   - component: {fileID: 1480990245}
   - component: {fileID: 1480990244}
+  - component: {fileID: 1480990246}
   m_Layer: 5
   m_Name: Win State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1480990243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15502,6 +15519,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480990242}
   m_CullTransparentMesh: 1
+--- !u!114 &1480990246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480990242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a515e44e97c0d42b3f717bbfa7e594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WinTimeText
+  text: {fileID: 1172502110}
+  format: You beat the game in {0} minutes and {1} seconds
 --- !u!1001 &1487643905
 PrefabInstance:
   m_ObjectHideFlags: 0
