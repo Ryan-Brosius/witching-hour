@@ -13,7 +13,7 @@ public class PlayerInteractor : MonoBehaviour
     public InternalDialogue internalDialogue;
 
     // True while a sequence (dialogue, knock animation, etc.) runs. Movement and interacting are blocked.
-    public bool Busy { get; private set; }
+    public bool Busy { get; set; }
     public Interactable Current { get; private set; }
 
     Interactable held;
