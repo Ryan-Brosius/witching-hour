@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
     public float buttonFadeTime = 1f;
 
     [Header("Minute Tick")]
+    public AudioSource bellSound;
+    [Header("Minute Tick")]
     public float shakeTime = 0.2f;
     public float shakeStrength = 0.2f;
 
@@ -74,6 +76,7 @@ public class MainMenu : MonoBehaviour
         if (firstTime) return;
 
         cam.Shake(shakeTime, shakeStrength);
+        if (bellSound != null) bellSound.Play();
     }
 
     public void Play()
